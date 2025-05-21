@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emmegi Point di Marco Gigliuto - Pratiche Auto e Assicurazioni</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#1a472a',
+                        'primary-light': '#2a5738',
+                        'secondary': '#f0f4f0',
+                        'accent': '#4CAF50',
+                    }
+                },
+                fontFamily: {
+                    'sans': ['Montserrat', 'sans-serif'],
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        
+        .service-icon {
+            transition: all 0.3s ease;
+        }
+        
+        .service-card:hover .service-icon {
+            transform: scale(1.1);
+        }
+        
+        .hero-bg {
+            background: linear-gradient(135deg, #1a472a 0%, #2a5738 100%);
+        }
+    </style>
+</head>
+<body class="font-sans bg-gray-50 text-gray-800">
+    <!-- Header -->
+    <header class="bg-primary text-white shadow-md">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <div class="mr-3">
+                    <!-- Logo con fallback -->
+                    <img src="logo.png" alt="Emmegi Point Logo" class="w-10 h-10" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                    <svg class="w-10 h-10" style="display:none;" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2L2 7L12 12L22 7L12 2Z" fill="white"/>
+                        <path d="M2 17L12 22L22 17" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M2 12L12 17L22 12" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <div>
+                    <h1 class="text-xl font-bold">Emmegi Point</h1>
+                    <p class="text-xs">di Marco Gigliuto</p>
+                </div>
+            </div>
+            <nav class="hidden md:block">
+                <ul class="flex space-x-6">
+                    <li><a href="#home" class="hover:text-accent transition">Home</a></li>
+                    <li><a href="#servizi" class="hover:text-accent transition">Servizi</a></li>
+                    <li><a href="#chi-siamo" class="hover:text-accent transition">Chi Siamo</a></li>
+                    <li><a href="#contatti" class="hover:text-accent transition">Contatti</a></li>
+                </ul>
+            </nav>
+            <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden hidden bg-primary-light">
+            <ul class="flex flex-col items-center py-4">
+                <li class="py-2"><a href="#home" class="hover:text-accent transition">Home</a></li>
+                <li class="py-2"><a href="#servizi" class="hover:text-accent transition">Servizi</a></li>
+                <li class="py-2"><a href="#chi-siamo" class="hover:text-accent transition">Chi Siamo</a></li>
+                <li class="py-2"><a href="#contatti" class="hover:text-accent transition">Contatti</a></li>
+            </ul>
+        </div>
+    </header>
+<!-- Hero Section -->
+    <section id="home" class="hero-bg text-white py-16">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-8 md:mb-0">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Pratiche Auto e Assicurazioni</h2>
+                <p class="text-lg mb-6">Soluzioni complete per tutte le tue esigenze automobilistiche e assicurative. Servizio professionale, veloce e affidabile.</p>
+                <div class="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4">
+                    <a href="#servizi" class="bg-accent hover:bg-green-600 text-white font-medium py-2 px-6 rounded-md transition duration-300 ease-in-out text-center">Scopri i Servizi</a>
+                    <a href="#contatti" class="bg-transparent hover:bg-white hover:text-primary border border-white text-white font-medium py-2 px-6 rounded-md transition duration-300 ease-in-out text-center">Contattaci</a>
+                </div>
+            </div>
+            <div class="md:w-1/2 flex justify-center">
+                <!-- Elementi grafici più inerenti al settore -->
+                <div class="relative">
+                    <!-- Documento/Contratto -->
+                    <svg class="w-full max-w-md" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Documento principale -->
+                        <rect x="80" y="40" width="320" height="432" rx="8" fill="white"/>
+                        
+                        <!-- Linee del documento -->
+                        <line x1="120" y1="120" x2="360" y2="120" stroke="#e0e0e0" stroke-width="4"/>
+                        <line x1="120" y1="160" x2="360" y2="160" stroke="#e0e0e0" stroke-width="4"/>
+                        <line x1="120" y1="200" x2="360" y2="200" stroke="#e0e0e0" stroke-width="4"/>
+                        <line x1="120" y1="240" x2="360" y2="240" stroke="#e0e0e0" stroke-width="4"/>
+                        <line x1="120" y1="280" x2="360" y2="280" stroke="#e0e0e0" stroke-width="4"/>
+                        <line x1="120" y1="320" x2="360" y2="320" stroke="#e0e0e0" stroke-width="4"/>
+                        
+                        <!-- Intestazione documento -->
+                        <rect x="120" y="60" width="240" height="40" rx="4" fill="#4CAF50" opacity="0.7"/>
+                        
+                        <!-- Timbro/Sigillo -->
+                        <circle cx="320" cy="380" r="40" fill="#1a472a" opacity="0.8"/>
+                        <circle cx="320" cy="380" r="30" stroke="white" stroke-width="2" fill="none"/>
+                        <path d="M305 380 L335 380 M320 365 L320 395" stroke="white" stroke-width="2"/>
+                        
+                        <!-- Firma -->
+                        <path d="M140 380 Q160 360, 180 380 Q200 400, 220 380 Q240 360, 260 380" stroke="#1a472a" stroke-width="3" fill="none"/>
+                        
+                        <!-- Icona auto -->
+                        <rect x="140" y="420" width="60" height="30" rx="5" fill="#4CAF50"/>
+                        <circle cx="150" cy="450" r="10" fill="#333"/>
+                        <circle cx="190" cy="450" r="10" fill="#333"/>
+                        
+                        <!-- Icona assicurazione -->
+                        <path d="M280 420 L310 420 L310 450 L280 450 Z" fill="#4CAF50"/>
+                        <path d="M295 410 L295 460" stroke="#4CAF50" stroke-width="2"/>
+                        <path d="M275 435 L315 435" stroke="#4CAF50" stroke-width="2"/>
+                    </svg>
+                    
+                    <!-- Elementi decorativi -->
+                    <div class="absolute top-0 right-0 bg-accent bg-opacity-20 rounded-full w-20 h-20 -mt-10 -mr-10"></div>
+                    <div class="absolute bottom-0 left-0 bg-accent bg-opacity-20 rounded-full w-16 h-16 -mb-8 -ml-8"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+<!-- Servizi Section -->
+    <section id="servizi" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-primary mb-2">I Nostri Servizi</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Offriamo una gamma completa di servizi per tutte le tue esigenze automobilistiche e assicurative.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Servizio 1 -->
+                <div class="service-card bg-white rounded-lg shadow-md p-6 transition duration-300 ease-in-out">
+                    <div class="service-icon bg-primary-light text-white w-16 h-16 rounded-full flex items-center justify-center mb-4 mx-auto">
+                        <i class="fas fa-exchange-alt text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-center mb-3">Passaggi di Proprietà</h3>
+                    <p class="text-gray-600 text-center">Gestiamo tutte le pratiche per il trasferimento di proprietà del tuo veicolo in modo rapido ed efficiente.</p>
+                </div>
+                
+                <!-- Servizio 2 -->
+                <div class="service-card bg-white rounded-lg shadow-md p-6 transition duration-300 ease-in-out">
+                    <div class="service-icon bg-primary-light text-white w-16 h-16 rounded-full flex items-center justify-center mb-4 mx-auto">
+                        <i class="fas fa-car text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-center mb-3">Immatricolazioni</h3>
+                    <p class="text-gray-600 text-center">Assistenza completa per l'immatricolazione di veicoli nuovi e usati, nazionali ed esteri.</p>
+                </div>
+                
+                <!-- Servizio 3 -->
+                <div class="service-card bg-white rounded-lg shadow-md p-6 transition duration-300 ease-in-out">
+                    <div class="service-icon bg-primary-light text-white w-16 h-16 rounded-full flex items-center justify-center mb-4 mx-auto">
+                        <i class="fas fa-truck text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-center mb-3">Licenze di Trasporto</h3>
+                    <p class="text-gray-600 text-center">Supporto per l'ottenimento e il rinnovo di licenze per il trasporto merci e persone.</p>
+                </div>
+                
+                <!-- Servizio 4 -->
+                <div class="service-card bg-white rounded-lg shadow-md p-6 transition duration-300 ease-in-out">
+                    <div class="service-icon bg-primary-light text-white w-16 h-16 rounded-full flex items-center justify-center mb-4 mx-auto">
+                        <i class="fas fa-receipt text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-center mb-3">Bollo Auto</h3>
+                    <p class="text-gray-600 text-center">Servizio di pagamento e verifica del bollo auto, con controllo di eventuali arretrati.</p>
+                </div>
+                
+                <!-- Servizio 5 -->
+                <div class="service-card bg-white rounded-lg shadow-md p-6 transition duration-300 ease-in-out">
+                    <div class="service-icon bg-primary-light text-white w-16 h-16 rounded-full flex items-center justify-center mb-4 mx-auto">
+                        <i class="fas fa-shield-alt text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-center mb-3">Assicurazioni</h3>
+                    <p class="text-gray-600 text-center">Consulenza e stipula di polizze assicurative personalizzate per auto, moto e altri veicoli.</p>
+                </div>
+                
+                <!-- Servizio 6 -->
+                <div class="service-card bg-white rounded-lg shadow-md p-6 transition duration-300 ease-in-out">
+                    <div class="service-icon bg-primary-light text-white w-16 h-16 rounded-full flex items-center justify-center mb-4 mx-auto">
+                        <i class="fas fa-file-alt text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-center mb-3">Consulenza Automobilistica</h3>
+                    <p class="text-gray-600 text-center">Assistenza professionale per qualsiasi pratica automobilistica e consulenza personalizzata.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+<!-- Chi Siamo Section -->
+    <section id="chi-siamo" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-8 md:mb-0">
+                    <div class="bg-primary rounded-lg p-1 inline-block mb-6">
+                        <!-- Logo con fallback -->
+                        <img src="logo.png" alt="Emmegi Point Logo" class="w-16 h-16" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                        <svg class="w-16 h-16 text-white" style="display:none;" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2L2 7L12 12L22 7L12 2Z" fill="currentColor"/>
+                            <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h2 class="text-3xl font-bold text-primary mb-4">Chi Siamo</h2>
+                    <p class="text-gray-600 mb-4">Emmegi Point di Marco Gigliuto è un'agenzia specializzata in pratiche automobilistiche e assicurative con esperienza nel settore.</p>
+                    <p class="text-gray-600 mb-4">La nostra missione è offrire un servizio completo, professionale e personalizzato, garantendo la massima assistenza ai nostri clienti in tutte le fasi delle pratiche.</p>
+                    <p class="text-gray-600 mb-6">Ci distinguiamo per la competenza, l'affidabilità e la rapidità con cui gestiamo ogni pratica, sempre nel rispetto delle normative vigenti.</p>
+                    <div class="flex space-x-4">
+                        <span class="bg-primary-light text-white px-4 py-2 rounded-full text-sm">Professionalità</span>
+                        <span class="bg-primary-light text-white px-4 py-2 rounded-full text-sm">Esperienza</span>
+                        <span class="bg-primary-light text-white px-4 py-2 rounded-full text-sm">Affidabilità</span>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <div class="bg-white p-8 rounded-lg shadow-lg max-w-md">
+                        <div class="flex items-center mb-6">
+                            <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mr-4">
+                                <span class="text-white text-2xl font-bold">MG</span>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold">Marco Gigliuto</h3>
+                                <p class="text-gray-600">Titolare</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 italic mb-6">"Il nostro obiettivo è semplificare la vita dei nostri clienti, occupandoci di tutte le pratiche burocratiche legate al mondo automobilistico e assicurativo con professionalità e dedizione."</p>
+                        <div class="border-t border-gray-200 pt-4">
+                            <p class="text-gray-600 mb-2"><i class="fas fa-check-circle text-accent mr-2"></i> Consulente automobilistico certificato</p>
+                            <p class="text-gray-600 mb-2"><i class="fas fa-check-circle text-accent mr-2"></i> Esperto in normative del settore</p>
+                            <p class="text-gray-600"><i class="fas fa-check-circle text-accent mr-2"></i> Servizio rapido e professionale</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+ <!-- Contatti Section -->
+    <section id="contatti" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-primary mb-2">Contattaci</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Siamo a tua disposizione per qualsiasi informazione o chiarimento. Contattaci o vieni a trovarci in agenzia.</p>
+            </div>
+            
+            <div class="flex flex-col lg:flex-row">
+                <div class="lg:w-1/2 mb-8 lg:mb-0 lg:pr-8">
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-md h-full">
+                        <h3 class="text-xl font-semibold mb-4 text-primary">Informazioni di Contatto</h3>
+                        
+                        <div class="flex items-start mb-4">
+                            <div class="bg-primary-light rounded-full p-2 mr-4 mt-1">
+                                <i class="fas fa-map-marker-alt text-white"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium">Indirizzo</h4>
+                                <p class="text-gray-600">Via Milano 122A<br>Vittoria (RG)</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start mb-4">
+                            <div class="bg-primary-light rounded-full p-2 mr-4 mt-1">
+                                <i class="fas fa-phone-alt text-white"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium">Telefono</h4>
+                                <p class="text-gray-600">0932.294611</p>
+                                <p class="text-gray-600"><i class="fab fa-whatsapp mr-1 text-green-500"></i> Disponibile anche su WhatsApp</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start mb-4">
+                            <div class="bg-primary-light rounded-full p-2 mr-4 mt-1">
+                                <i class="fas fa-envelope text-white"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium">Email</h4>
+                                <p class="text-gray-600">ag.marcogigliuto@gmail.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-primary-light rounded-full p-2 mr-4 mt-1">
+                                <i class="fas fa-clock text-white"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium">Orari di Apertura</h4>
+                                <p class="text-gray-600">Lunedì - Venerdì:</p>
+                                <p class="text-gray-600">9:00 - 13:00 | 16:00 - 19:30</p>
+                                <p class="text-gray-600">Sabato e Domenica: Chiuso</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+             <div class="lg:w-1/2">
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-semibold mb-4 text-primary">Inviaci un Messaggio</h3>
+                        <form id="contact-form" class="space-y-4">
+                            <div>
+                                <label for="name" class="block text-gray-700 mb-1">Nome e Cognome</label>
+                                <input type="text" id="name" name="name" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" required>
+                            </div>
+                            
+                            <div>
+                                <label for="email" class="block text-gray-700 mb-1">Email</label>
+                                <input type="email" id="email" name="email" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" required>
+                            </div>
+                            
+                            <div>
+                                <label for="phone" class="block text-gray-700 mb-1">Telefono</label>
+                                <input type="tel" id="phone" name="phone" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+                            </div>
+                            
+                            <div>
+                                <label for="service" class="block text-gray-700 mb-1">Servizio di Interesse</label>
+                                <select id="service" name="service" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+                                    <option value="">Seleziona un servizio</option>
+                                    <option value="passaggio">Passaggio di Proprietà</option>
+                                    <option value="immatricolazione">Immatricolazione</option>
+                                    <option value="licenza">Licenza di Trasporto</option>
+                                    <option value="bollo">Bollo Auto</option>
+                                    <option value="assicurazione">Assicurazione</option>
+                                    <option value="altro">Altro</option>
+                                </select>
+                            </div>
+                            
+                            <div>
+                                <label for="message" class="block text-gray-700 mb-1">Messaggio</label>
+                                <textarea id="message" name="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" required></textarea>
+                            </div>
+                            
+                            <div class="flex items-center">
+                                <input type="checkbox" id="privacy" name="privacy" class="mr-2 h-4 w-4 text-primary focus:ring-primary border-gray-300 rounded" required>
+                                <label for="privacy" class="text-sm text-gray-700">Acconsento al trattamento dei dati personali ai sensi del GDPR</label>
+                            </div>
+                            
+                            <div>
+                                <button type="submit" class="bg-primary hover:bg-primary-light text-white font-medium py-2 px-6 rounded-md transition duration-300 ease-in-out w-full">Invia Messaggio</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-primary text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between">
+                <div class="mb-6 md:mb-0">
+                    <div class="flex items-center mb-4">
+                        <!-- Logo con fallback -->
+                        <img src="logo.png" alt="Emmegi Point Logo" class="w-8 h-8 mr-2" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                        <svg class="w-8 h-8 mr-2" style="display:none;" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2L2 7L12 12L22 7L12 2Z" fill="white"/>
+                            <path d="M2 17L12 22L22 17" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M2 12L12 17L22 12" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <div>
+                            <h3 class="text-lg font-bold">Emmegi Point</h3>
+                            <p class="text-xs">di Marco Gigliuto</p>
+                        </div>
+                    </div>
+                    <p class="text-sm mb-4">La tua agenzia di fiducia per pratiche auto e assicurazioni.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-white hover:text-accent transition"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-white hover:text-accent transition"><i class="fab fa-instagram"></i></a>
+                        <a href="https://wa.me/+390932294611" class="text-white hover:text-accent transition"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+ <div class="mb-6 md:mb-0">
+                    <h4 class="text-lg font-semibold mb-4">Collegamenti Rapidi</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-300 hover:text-white transition">Home</a></li>
+                        <li><a href="#servizi" class="text-gray-300 hover:text-white transition">Servizi</a></li>
+                        <li><a href="#chi-siamo" class="text-gray-300 hover:text-white transition">Chi Siamo</a></li>
+                        <li><a href="#contatti" class="text-gray-300 hover:text-white transition">Contatti</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Contatti</h4>
+                    <ul class="space-y-2">
+                        <li class="flex items-center"><i class="fas fa-map-marker-alt mr-2"></i> Via Milano 122A - Vittoria (RG)</li>
+                        <li class="flex items-center"><i class="fas fa-phone-alt mr-2"></i> 0932.294611</li>
+                        <li class="flex items-center"><i class="fas fa-envelope mr-2"></i> ag.marcogigliuto@gmail.com</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-8 pt-6 text-center text-sm">
+                <p>&copy; 2023 Emmegi Point di Marco Gigliuto. Tutti i diritti riservati.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', function() {
+                document.getElementById('mobile-menu').classList.add('hidden');
+            });
+        });
+        
+        // Form submission
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // In a real scenario, you would send the form data to a server
+            // For this demo, we'll just show a success message
+            
+            const formData = new FormData(this);
+            let formValues = {};
+            
+            for (let [key, value] of formData.entries()) {
+                formValues[key] = value;
+            }
+            
+            // Clear the form
+            this.reset();
+            
+            // Show success message
+            alert('Grazie per averci contattato! Ti risponderemo al più presto.');
+        });
+    </script>
+</body>
+</html>
